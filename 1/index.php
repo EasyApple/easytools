@@ -4,10 +4,25 @@
         <title>EasyTools</title>
         <br><center><lable><font type="黑体" size="16" color="blue">灵感工具集</font></lable></center></br>
     </div>
+	<div>
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-3914685173905728";
+		/* 长条横幅2 */
+		google_ad_slot = "8282754143";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+	</div>
+	<div>
+		<br></br>
+	</div>
     <div id="tools">
         <center>
 		<a href="vlc.html">VLC插件</a>
-        <br><input value="http://" NAME="myurl" TYPE="text" SIZE="32" onmouseover="this.style.borderColor='blue';this.style.backgroundColor='green'" style="width: 256; height: 32" onmouseout="this.style.borderColor='blue';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=blue"></br> 
         </center>
     </div>
 </form>

@@ -5,6 +5,7 @@
         <br><center><lable><font type="黑体" size="16" color="blue">灵感工具集</font></lable></center></br>
     </div>
 	<div>
+		<center>
 		<script type="text/javascript"><!--
 		google_ad_client = "ca-pub-3914685173905728";
 		/* 长条横幅2 */
@@ -16,6 +17,7 @@
 		<script type="text/javascript"
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
+		</center>
 	</div>
 	<div>
 		<br></br>

@@ -1,8 +1,8 @@
 <?php
 
 header("Content-Type: text/html; charset=utf-8");
- $appid = "";
- $appsecret = "";
+ $appid = "293339860000033444";
+ $appsecret = "88e70b4dd891121568030342ca455005";
 $phone="18911773156";//收消息人
 $randcode="123456";//验证码内容6位数字
 $exp_time="2013-11-2 0:0:0";//有效期

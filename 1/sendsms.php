@@ -3,9 +3,9 @@
 header("Content-Type: text/html; charset=utf-8");
 $appid = "293339860000033444";
 $appsecret = "88e70b4dd891121568030342ca455005";
-$phone="18911773156";//收消息人
+$phone="18911773171";//收消息人
 $randcode="123456";//验证码内容6位数字
-$exp_time="5";//有效期
+$exp_time="5";//有效期(MIN)
 $timestamp = date('Y-m-d H:i:s');
 
 $tokenAPI = "https://oauth.api.189.cn/emp/oauth2/v2/access_token";

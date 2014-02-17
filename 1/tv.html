@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>你的网络电视名称</TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<META name="Keywords" content="你的网络电视名称" />
+<META name="description" content="你的网络电视名称" />
+<STYLE type="text/css">
+<!--
+body {overflow:hidden;background-color: #000000}
+a {color: #fff;text-decoration: none;text-align: center;}
+a:hover {color:#FFFFFF;text-decoration: none;}
+.close {MARGIN: 0px}
+.close a {BACKGROUND: url(images/c.gif) no-repeat;BORDER-TOP-WIDTH: 0px; BACKGROUND-POSITION: 0px 0px; DISPLAY: block; BORDER-LEFT-WIDTH: 0px; FLOAT: right; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 9px; LINE-HEIGHT: 58px; HEIGHT: 58px; TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 0px}
+.close a:hover {BACKGROUND-POSITION: -9px 0px;TEXT-DECORATION: none}
+.open {MARGIN: 0px}
+.open a {BACKGROUND: url(images/o.gif) no-repeat;BORDER-TOP-WIDTH: 0px; BACKGROUND-POSITION: 0px 0px; DISPLAY: block; BORDER-LEFT-WIDTH: 0px; FLOAT: right; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 9px; LINE-HEIGHT: 58px; HEIGHT: 58px; TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 0px}
+.open a:hover {BACKGROUND-POSITION: -9px 0px;TEXT-DECORATION: none}
+#welcome a{color:red}
+-->
+</STYLE>
+<SCRIPT language="JavaScript">
+function killErrors() {
+    return true;
+}
+window.onerror = killErrors;
+// -->
+function showsubmenu(){
+    whichEl = eval("tv_list");
+    if (whichEl.style.display == "none") {
+      eval("tv_list.style.display=\"\";");
+      idFlag.innerHTML = "<div class='close'><a href='#' title='按此切换到精简模式'></a></div>";
+    }
+    else {
+      eval("tv_list.style.display=\"none\";");
+      idFlag.innerHTML = "<div class='open'><a href='#' title='按此切换到正常模式'></a>";
+    }
+}
+</SCRIPT>
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" oncontextmenu=window.event.returnValue=false>
+<DIV id="welcome"></DIV>
+<TABLE width="100%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<TR>
+<TD>
+<IFRAME id="play" name="play" frameborder="0" src="http://live.64ma.com/tv/welcome.html"  width="100%" height="100%" SCROLLING="no" border="0" allowtransparency="true">
+</IFRAME>
+</TD>
+<TD id="sh" width="9" bgcolor="#171a1d" style="cursor:hand">
+<SPAN id="idFlag">
+<DIV class="close" id="sh">
+<A href="#" title="按此切换到精简模式">
+</A>
+</DIV>
+</SPAN>
+</TD>
+<TD width="210" id="tv_list">
+<IFRAME id="tv" frameborder="0" src="http://live.64ma.com/tv/list.asp?tid=&fid=&swd=&uid="  width="100%" height="100%" SCROLLING="AUTO" border="0" target="play" allowtransparency="true">
+</IFRAME>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

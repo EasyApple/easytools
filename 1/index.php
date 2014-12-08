@@ -25,7 +25,7 @@
     <div id="tools">
         <center>
 		<a href="vlc.html">VLC插件</a>
-        <a href="tv.html">网络电视</a>
+        <a href="auth.html">授权工具</a>
         </center>
     </div>
 </form>

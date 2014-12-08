@@ -80,7 +80,7 @@ function bin_to_ascii($bin)
     {
         //$ascii.= chr(intval(substr($bin,$i,1),16));
         $temp = intval(substr($bin,$i,1),16);
-        $temp2 = sprintf("%c", $temp);
+        $temp2 = sprintf("%d", $temp);
         $ascii .= $temp2;
     }
  

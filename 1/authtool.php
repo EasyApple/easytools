@@ -3,10 +3,11 @@
 
 class RSATool
 {
-	private $pi_key = 0;
-	private $pu_key = 0;
+	private $pi_key;
+	private $pu_key;
 	public function init()
 	{
+
 $private_key = '-----BEGIN RSA PRIVATE KEY-----  
 MIICXQIBAAKBgQC3//sR2tXw0wrC2DySx8vNGlqt3Y7ldU9+LBLI6e1KS5lfc5jl  
 TGF7KBTSkCHBM3ouEHWqp1ZJ85iJe59aF5gIB2klBd6h4wrbbHA2XE1sq21ykja/  
@@ -33,9 +34,6 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 		//check keys 判断私钥、公钥是否可用，可用则返回 Resource id
 		$this->pi_key =  openssl_pkey_get_private($private_key); 
 		$this->pu_key = openssl_pkey_get_public($public_key);
-
-		echo $this->pi_key; echo "\n";  
-		echo $this->pu_key; echo "\n";  
 	}
 
 	//私钥加密  
@@ -86,11 +84,13 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 		$userName = $_POST["name"];
 		$deviceInfo = $_POST["info"];
 		$license = $rsaTool->private_encrypt($deviceInfo);
+		$temp = $rsaTool->public_decrypt($license);
 	?>
 	Welcome <?php echo $userName; ?><br>
 	DeviceInfo: <?php echo $deviceInfo; ?><br>
-	License: <?php echo $license; ?>
-
+	License: <?php echo $license; ?><br>
+	DeviceInfo: <?php echo $temp; ?>
+	
 </body>
 </html>
 

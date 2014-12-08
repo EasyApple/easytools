@@ -75,16 +75,13 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 function bin_to_ascii($bin)
 {
 	$ascii = "";
-	$len = strlen($bin);
-    for($i = 0; $i < $len/2; $i+=2)
-    {
-        //$ascii.= chr(intval(substr($bin,$i,1),16));
-        $temp = intval(substr($bin,$i,2),16);
-        $temp2 = sprintf("%d", $temp);
-        $ascii .= $temp2;
-    }
- 
-    return $ascii;
+
+    $len = strlen($data);
+	for($i=0;$i<$len;$i+=2)
+	{
+		$ascii .= pack("C",hexdec(substr($string,$i,2)));
+	}
+	return $ascii;
 }
 
 ?>

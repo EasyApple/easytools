@@ -31,8 +31,8 @@ class RSATool
 		-----END PUBLIC KEY-----'; 
 
 		//check keys 判断私钥、公钥是否可用，可用则返回 Resource id
-		$pi_key =  openssl_pkey_get_private($this->$private_key); 
-		$pu_key = openssl_pkey_get_public($this->$public_key);		
+		$this->$pi_key =  openssl_pkey_get_private($private_key); 
+		$this->$pu_key = openssl_pkey_get_public($public_key);		
 	}
 
 	//私钥加密  

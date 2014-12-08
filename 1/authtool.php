@@ -3,8 +3,8 @@
 
 class RSATool
 {
-	private $pi_key = 0;
-	private $pu_key = 0;
+	private $pi_key = "";
+	private $pu_key = "";
 	public function init()
 	{
 		$private_key = '-----BEGIN RSA PRIVATE KEY-----  
@@ -31,15 +31,15 @@ class RSATool
 		-----END PUBLIC KEY-----'; 
 
 		//check keys 判断私钥、公钥是否可用，可用则返回 Resource id
-		$this->$pi_key =  openssl_pkey_get_private($private_key); 
-		$this->$pu_key = openssl_pkey_get_public($public_key);		
+		$this->pi_key =  openssl_pkey_get_private($private_key); 
+		$this->pu_key = openssl_pkey_get_public($public_key);		
 	}
 
 	//私钥加密  
 	public function private_encrypt($data)
 	{
 		$encrypted = ""; 
-		openssl_private_encrypt($data,$encrypted,$this->$pi_key);
+		openssl_private_encrypt($data,$encrypted,$this->pi_key);
 		$encrypted = base64_encode($encrypted);
 		return $encrypted;  
 	}
@@ -48,7 +48,7 @@ class RSATool
 	public function public_decrypt($encrypted)
 	{
 		$decrypted = ""; 
-		openssl_public_decrypt(base64_decode($encrypted),$decrypted,$this->$pu_key); 
+		openssl_public_decrypt(base64_decode($encrypted),$decrypted,$this->pu_key); 
 		return $decrypted;  
 	}
 
@@ -56,7 +56,7 @@ class RSATool
 	public function public_encrypt($data)
 	{
 		$encrypted = ""; 
-		openssl_public_encrypt($data,$encrypted,$this->$pu_key);
+		openssl_public_encrypt($data,$encrypted,$this->pu_key);
 		$encrypted = base64_encode($encrypted);
 		return $encrypted;  
 	}
@@ -65,7 +65,7 @@ class RSATool
 	public function private_decrypt($encrypted)
 	{
 		$decrypted = ""; 
-		openssl_private_decrypt(base64_decode($encrypted),$decrypted,$this->$pi_key); 
+		openssl_private_decrypt(base64_decode($encrypted),$decrypted,$this->pi_key); 
 		return $decrypted;  
 	}	
 

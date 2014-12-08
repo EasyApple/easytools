@@ -3,6 +3,8 @@
 
 class RSATool
 {
+	$private_key = "";
+	$public_key = "";
 	public function init()
 	{
 		$private_key = '-----BEGIN RSA PRIVATE KEY-----  

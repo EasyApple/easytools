@@ -72,6 +72,16 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 
 }
 
+function bin_to_ascii($bin)
+{
+	$arr = explode(' ', $bin);
+    foreach($arr as &$v){
+        $v = pack("H".strlen(base_convert($v, 2, 16)), base_convert($v, 2, 16));
+    }
+ 
+    return join('', $arr);
+}
+
 ?>
 
 
@@ -83,13 +93,16 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 		$rsaTool->init();
 		$userName = $_POST["name"];
 		$deviceInfo = $_POST["info"];
-		$license = $rsaTool->private_encrypt($deviceInfo);
-		$licensePlait = base64_decode($license);
+		$licenseBase64 = $rsaTool->private_encrypt($deviceInfo);
+		$licenseBin = base64_decode($licenseBase64);
+		$licenseAscii = bin_to_ascii($licenseBin);
 	?>
+
 	Welcome <?php echo $userName; ?><br>
 	DeviceInfo: <?php echo $deviceInfo; ?><br>
-	License: <?php echo $license; ?><br>
-	LicensePlait: <?php echo $licensePlait; ?><br>
+	LicenseBase64: <?php echo $license; ?><br>
+	LicenseAscii: <?php echo $licensePlait; ?><br>
+
 </body>
 </html>
 

@@ -56,7 +56,8 @@ echo $encrypted,"\n";
   
 echo "private key decrypt:\n";  
 openssl_private_decrypt(base64_decode($encrypted),$decrypted,$pi_key);//私钥解密  
-echo $decrypted,"\n";  
+echo $decrypted,"\n"; 
+?> 
 
 
 

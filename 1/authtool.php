@@ -100,8 +100,8 @@ function bin_to_ascii($bin)
 
 	Welcome <?php echo $userName; ?><br>
 	DeviceInfo: <?php echo $deviceInfo; ?><br>
-	LicenseBase64: <?php echo $license; ?><br>
-	LicenseAscii: <?php echo $licensePlait; ?><br>
+	LicenseBase64: <?php echo $licenseBase64; ?><br>
+	LicenseAscii: <?php echo $licenseAscii; ?><br>
 
 </body>
 </html>

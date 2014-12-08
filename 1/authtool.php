@@ -74,12 +74,14 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 
 function bin_to_ascii($bin)
 {
-	$arr = explode('', $bin);
-    foreach($arr as &$v){
-        $v = pack("H".strlen(base_convert($v, 2, 16)), base_convert($v, 2, 16));
+	$ascii = "";
+	$len = strlen($bin);
+    for($i = 0; $i < $len; $i++)
+    {
+        $ascii.= chr(inval(substr($bin,$i,1),1));
     }
  
-    return join('', $arr);
+    return $ascii;
 }
 
 ?>

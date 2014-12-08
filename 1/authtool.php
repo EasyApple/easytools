@@ -34,8 +34,8 @@ class RSATool
 		$this->pi_key =  openssl_pkey_get_private($private_key); 
 		$this->pu_key = openssl_pkey_get_public($public_key);
 
-		print_r($this->pi_key);echo "\n";  
-		print_r($this->pu_key);echo "\n";  
+		echo $this->pi_key; echo "\n";  
+		echo $this->pu_key; echo "\n";  
 	}
 
 	//私钥加密  

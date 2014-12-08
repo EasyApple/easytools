@@ -3,8 +3,8 @@
 
 class RSATool
 {
-	private $pi_key = "";
-	private $pu_key = "";
+	private $pi_key = 0;
+	private $pu_key = 0;
 	public function init()
 	{
 		$private_key = '-----BEGIN RSA PRIVATE KEY-----  

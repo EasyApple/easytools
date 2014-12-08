@@ -79,7 +79,7 @@ function bin_to_ascii($bin)
     for($i = 0; $i < $len; $i++)
     {
         //$ascii.= chr(intval(substr($bin,$i,1),16));
-        $temp = intval(substr($bin,$i,1),16);
+        $temp = intval(substr($bin,$i,1),2);
         $temp2 = sprintf("%d", $temp);
         $ascii .= $temp2;
     }

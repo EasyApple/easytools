@@ -1,8 +1,12 @@
 <html>
 <body>
 
-	Welcome <?php echo $_POST["name"]; ?><br>
-	Your DeviceInfo: <?php echo $_POST["info"]; ?>
+<?php
+	$userName = $_POST["name"];
+	$deviceInfo = $_POST["info"];
+	Welcome echo $userName; <br>
+	DeviceInfo: echo $deviceInfo;
+?>
 
 </body>
 </html>

@@ -84,13 +84,12 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 		$userName = $_POST["name"];
 		$deviceInfo = $_POST["info"];
 		$license = $rsaTool->private_encrypt($deviceInfo);
-		$temp = $rsaTool->public_decrypt($license);
+		$licensePlait = base64_decode($license);
 	?>
 	Welcome <?php echo $userName; ?><br>
 	DeviceInfo: <?php echo $deviceInfo; ?><br>
 	License: <?php echo $license; ?><br>
-	DeviceInfo: <?php echo $temp; ?>
-	
+	LicensePlait: <?php echo $licensePlait; ?><br>
 </body>
 </html>
 

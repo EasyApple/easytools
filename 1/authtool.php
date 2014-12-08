@@ -80,7 +80,7 @@ class RSATool
 		$rsaTool->init();
 		$userName = $_POST["name"];
 		$deviceInfo = $_POST["info"];
-		$license = $rsaTool->private_encrypt();
+		$license = $rsaTool->private_encrypt($deviceInfo);
 	?>
 	Welcome <?php echo $userName; ?><br>
 	DeviceInfo: <?php echo $deviceInfo; ?><br>

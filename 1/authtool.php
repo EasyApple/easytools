@@ -51,7 +51,7 @@ class RSATool
 	}
 
 	//公钥加密  
-	public function private_encrypt($data)
+	public function public_encrypt($data)
 	{
 		$encrypted = ""; 
 		openssl_public_encrypt($data,$encrypted,$pu_key);
@@ -60,7 +60,7 @@ class RSATool
 	}
 	
 	//私钥解密 
-	public function public_decrypt($encrypted)
+	public function private_decrypt($encrypted)
 	{
 		$decrypted = ""; 
 		openssl_private_decrypt(base64_decode($encrypted),$decrypted,$pi_key); 

@@ -76,7 +76,7 @@ function bin_to_ascii($bin)
 {
 	$ascii = "";
     $len = strlen($bin);
-	for($i=0;$i<$len;$i+=2)
+	for($i=0; $i<$len; $i+=2)
 	{
 		$ascii .= pack("C",hexdec(substr($bin,$i,2)));
 	}

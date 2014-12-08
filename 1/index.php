@@ -2,7 +2,7 @@
 <form action="index.php" method="search">
     <div id="title">
         <title>EasyTools</title>
-        <br><center><lable><font type="黑体" size="16" color="blue">灵感工具集</font></lable></center></br>
+        <br><center><lable><font type="黑体" size="16" color="blue">EasyTools</font></lable></center></br>
     </div>
 	<div>
 		<center>

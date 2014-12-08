@@ -74,12 +74,12 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 
 function bin_to_ascii($bin)
 {
-	$ascii = "TEST";
+	$ascii = "";
 	$len = strlen($bin);
     for($i = 0; $i < $len; $i++)
     {
-        $ascii.= chr(intval(substr($bin,$i,1),16));
-        $ascii.= "A";
+        //$ascii.= chr(intval(substr($bin,$i,1),16));
+        $ascii.= substr($bin,$i,1);
     }
  
     return $ascii;

@@ -14,6 +14,7 @@
 		$authnum.=$list[$randnum];
 	}
 
+	include_once('global.php');
 	$randcode = $authnum;
 	$exp_time = "10";	//有效期(MIN)
 	$timestamp = date('Y-m-d H:i:s');

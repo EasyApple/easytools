@@ -98,14 +98,21 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 	</div>
 
 	<?php
+		include_once('sendsms.php');
 		$rsaTool = new RSATool();
 		$rsaTool->init();
 		$verifyCode = $_POST['code'];
 		$deviceInfo = $_POST["info"];
 
-   		//require_once ('sendsms.php');
+   		if($verifyCode == $randcode)
+   		{
+			$licenseInfo = $rsaTool->private_encrypt($deviceInfo);   			
+   		}
+   		else
+   		{
+			$licenseInfo = "验证码错误，获取授权码失败！"
+   		}
 
-		$licenseInfo = $rsaTool->private_encrypt($deviceInfo);
 	?>
 
     <div>

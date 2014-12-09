@@ -98,7 +98,6 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 	</div>
 
 	<?php
-		include_once('global.php');
 		$rsaTool = new RSATool();
 		$rsaTool->init();
 		$verifyCode = $_POST['code'];
@@ -109,7 +108,7 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 	    $kv->init();
 		$randcode = $kv->get('AuthTool_RandCode');
 
-   		if($verifyCode != "" && $verifyCode == $randcode)
+   		if($verifyCode != "" && strtoupper($verifyCode) == strtoupper($randcode)
    		{
 			$licenseInfo = $rsaTool->private_encrypt($deviceInfo);   			
    		}
@@ -133,10 +132,6 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 		</tr> 
 		<tr>
 			<td width="90"><a href="auth.html">返回</a></td> 		
-		</tr>
-		<tr>
-			<td width="90"><?php echo $verifyCode; ?> </td>
-			<td width="630"><?php echo $randcode; ?> </td>	
 		</tr>
     </center>
 	</div>

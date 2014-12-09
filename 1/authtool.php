@@ -107,6 +107,7 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 		$kv = new SaeKV ();
 	    $kv->init();
 		$randcode = $kv->get('AuthTool_RandCode');
+		$kv->set('AuthTool_RandCode','-');
 
    		if($deviceInfo != "" && $verifyCode != "" &&
    			strtoupper($verifyCode) == strtoupper($randcode))

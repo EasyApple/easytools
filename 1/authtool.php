@@ -85,6 +85,9 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 		$phoneNum = $_POST["phone"];
 		$verifyCode = $_POST['code'];
 		$deviceInfo = $_POST["info"];
+
+   		//require_once ('sendsms.php');
+
 		$licenseInfo = $rsaTool->private_encrypt($deviceInfo);
 	?>
 
@@ -107,12 +110,28 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 		<br></br>
 	</div>
     <div>
-		Welcome <?php echo $userName; ?><br>
-		DeviceInfo: <?php echo $deviceInfo; ?><br>
-		LicenseInfo: <?php echo $licenseInfo; ?><br>
-		<a href="auth.html">返回</a>
-	</div>
 
+    <center>
+		<table width="728">
+		<tr> 
+			<td width="90">手机号</td> 
+			<td width="630"><?php echo $phoneNum; ?></td>
+		</tr>
+		<tr> 
+			<td width="90">机器码</td> 
+			<td width="630"><?php echo $deviceInfo; ?></td>
+		</tr> 
+		<tr> 
+			<td width="90">授权码</td> 
+			<td width="630"><?php echo $licenseInfo; ?></td>
+		</tr> 
+		<tr>
+			<td width="90"><a href="auth.html">返回</a></td> 
+			<td width="630"></td>		
+		</tr>
+    </center>
+		
+	</div>
 </body>
 </html>
 

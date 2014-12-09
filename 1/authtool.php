@@ -108,7 +108,7 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 	    $kv->init();
 		$randcode = $kv->get('AuthTool_RandCode');
 
-   		if($verifyCode != "" && strtoupper($verifyCode) == strtoupper($randcode)
+   		if($verifyCode != "" && strtoupper($verifyCode) == strtoupper($randcode))
    		{
 			$licenseInfo = $rsaTool->private_encrypt($deviceInfo);   			
    		}

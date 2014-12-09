@@ -131,7 +131,7 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 			<td width="630"><?php echo $licenseInfo; ?></td>
 		</tr> 
 		<tr>
-			<td width="90"><a href="auth.html">返回</a></td> 		
+			<td width="90"><a href="auth.php">返回</a></td> 		
 		</tr>
     </center>
 	</div>

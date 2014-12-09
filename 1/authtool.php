@@ -115,7 +115,9 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 		<table width="728" style="word-break:break-all; word-wrap:break-all;">
 		<tr> 
 			<td width="90">手机号</td> 
-			<td width="630"><?php echo $phoneNum; ?></td>
+			<td width="270"><?php echo $phoneNum; ?></td>
+			<td width="90">验证码</td> 
+			<td width="270"><?php echo $verifyCode; ?></td>
 		</tr>
 		<tr> 
 			<td width="90">机器码</td> 

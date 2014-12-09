@@ -93,10 +93,10 @@
 		echo $data;
 		curl_close($ch);
 
-		<Script>alert('验证码已发送！');window.self.location='auth.html';</Script>
+		echo '<Script>alert('验证码已发送！');window.self.location='auth.html';</Script>'
 	}
 	else
 	{
-		<Script>alert('手机号码受限，验证码未发送！');window.self.location='auth.html';</Script>
+		echo '<Script>alert('手机号码受限，验证码未发送！');window.self.location='auth.html';</Script>'
 	}
 ?>

@@ -110,7 +110,7 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
    		}
    		else
    		{
-			$licenseInfo = "验证码错误，获取授权码失败！"
+			$licenseInfo = "验证码错误，获取授权码失败！";
    		}
 
 	?>

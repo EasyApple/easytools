@@ -82,12 +82,31 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 	<?php
 		$rsaTool = new RSATool();
 		$rsaTool->init();
-		$userName = $_POST["name"];
+		$phoneNum = $_POST["phone"];
+		$verifyCode = $_POST['code'];
 		$deviceInfo = $_POST["info"];
 		$licenseInfo = $rsaTool->private_encrypt($deviceInfo);
 	?>
 
 	<div>
+		<center>
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-3914685173905728";
+		/* 长条横幅2 */
+		google_ad_slot = "8282754143";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+		</center>
+	</div>
+	<div>
+		<br></br>
+	</div>
+    <div>
 		Welcome <?php echo $userName; ?><br>
 		DeviceInfo: <?php echo $deviceInfo; ?><br>
 		LicenseInfo: <?php echo $licenseInfo; ?><br>

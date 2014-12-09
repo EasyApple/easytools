@@ -13,9 +13,13 @@
 		$randnum=rand(0,35); // 10+26;
 		$authnum.=$list[$randnum];
 	}
-
-	include_once('global.php');
 	$randcode = $authnum;
+
+	//验证码写入KVDB
+	$kv = new SaeKV ();
+    $kv->init();
+    $kv->set('AuthTool_RandCode', $randcode);
+    
 	$exp_time = "10";	//有效期(MIN)
 	$timestamp = date('Y-m-d H:i:s');
 

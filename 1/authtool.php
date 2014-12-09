@@ -104,6 +104,11 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 		$verifyCode = $_POST['code'];
 		$deviceInfo = $_POST["info"];
 
+		//从KVDB读取验证码
+		$kv = new SaeKV ();
+	    $kv->init();
+		$randcode = $kv->get('AuthTool_RandCode');
+
    		if($verifyCode != "" && $verifyCode == $randcode)
    		{
 			$licenseInfo = $rsaTool->private_encrypt($deviceInfo);   			

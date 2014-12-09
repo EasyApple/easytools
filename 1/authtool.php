@@ -104,13 +104,13 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 		$verifyCode = $_POST['code'];
 		$deviceInfo = $_POST["info"];
 
-   		if($verifyCode == $randcode)
+   		if($verifyCode != "" && $verifyCode == $randcode)
    		{
 			$licenseInfo = $rsaTool->private_encrypt($deviceInfo);   			
    		}
    		else
    		{
-			$licenseInfo = "验证码错误，获取授权码失败！";
+			$licenseInfo = "验证码无效，获取授权码失败！";
    		}
 
 	?>

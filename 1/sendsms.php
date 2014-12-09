@@ -2,11 +2,20 @@
 header("Content-Type: text/html; charset=utf-8");
 $appid = "293339860000033444";
 $appsecret = "88e70b4dd891121568030342ca455005";
-
-//$phone="18911773156";	//收消息人
 $phone = $_POST["phone"];
-$randcode = "123456";//验证码内容6位数字
-$exp_time = "5";//有效期(MIN)
+
+//随机码生成
+srand((double)microtime()*1000000);	//create a random number feed.
+$ychar="0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z";
+$list=explode(",",$ychar);
+for($i=0;$i<6;$i++)
+{
+	$randnum=rand(0,35); // 10+26;
+	$authnum.=$list[$randnum];
+}
+
+$randcode = $authnum;
+$exp_time = "10";	//有效期(MIN)
 $timestamp = date('Y-m-d H:i:s');
 
 $tokenAPI = "https://oauth.api.189.cn/emp/oauth2/v2/access_token";
@@ -24,10 +33,10 @@ curl_setopt_array(
 
 $content=curl_exec($ch);
 curl_close($ch);
+
 //echo $content;
 $obj=json_decode($content);
 $access_token=$obj->access_token;
-
 
 $url = "http://api.189.cn/v2/dm/randcode/token?";
 $param['app_id']= "app_id=".$appid;
@@ -73,7 +82,5 @@ curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 $data = curl_exec($ch);
 echo $data;
 curl_close($ch);
-
-
 ?>
-
+<Script>alert('验证码已发送');window.self.location='auth.html';</Script>

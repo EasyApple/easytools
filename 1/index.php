@@ -29,12 +29,12 @@
 		<tr> 
 			<td width="90"><a href="vlc.html">VLC插件</a></td> 
 			<td width="90"><a href="auth.html">授权工具</a></td> 
-			<td width="90"></td>
-			<td width="90"></td> 
-			<td width="90"></td> 
-			<td width="90"></td> 
-			<td width="90"></td> 
-			<td width="90"></td> 
+			<td width="90">测试</td>
+			<td width="90">测试</td> 
+			<td width="90">测试</td> 
+			<td width="90">测试</td> 
+			<td width="90">测试</td> 
+			<td width="90">测试</td> 
 		</tr> 
         </center>
     </div>

@@ -78,19 +78,6 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <body>
-
-	<?php
-		$rsaTool = new RSATool();
-		$rsaTool->init();
-		$phoneNum = $_POST["phone"];
-		$verifyCode = $_POST['code'];
-		$deviceInfo = $_POST["info"];
-
-   		//require_once ('sendsms.php');
-
-		$licenseInfo = $rsaTool->private_encrypt($deviceInfo);
-	?>
-
 	<div>
 		<center>
 		<script type="text/javascript"><!--
@@ -109,8 +96,20 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 	<div>
 		<br></br>
 	</div>
-    <div>
 
+	<?php
+		$rsaTool = new RSATool();
+		$rsaTool->init();
+		$phoneNum = $_POST["phone"];
+		$verifyCode = $_POST['code'];
+		$deviceInfo = $_POST["info"];
+
+   		//require_once ('sendsms.php');
+
+		$licenseInfo = $rsaTool->private_encrypt($deviceInfo);
+	?>
+
+    <div>
     <center>
 		<table width="728" style="word-break:break-all; word-wrap:break-all;">
 		<tr> 
@@ -126,7 +125,6 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 			<td width="630"></td>		
 		</tr>
     </center>
-		
 	</div>
 </body>
 </html>

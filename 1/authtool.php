@@ -112,7 +112,7 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
     <div>
 
     <center>
-		<table width="728">
+		<table width="728" style="word-break:break-all; word-wrap:break-all;">
 		<tr> 
 			<td width="90">手机号</td> 
 			<td width="630"><?php echo $phoneNum; ?></td>

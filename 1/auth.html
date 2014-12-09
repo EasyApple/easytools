@@ -21,20 +21,14 @@
 	</div>
     <div>
         <center>
-			手机号: <input type="text" name="phone"><br>
-			验证码: <input type="text" name="code"><br>
-			机器码: <input type="text" name="info"><br>
-		</center>
-	</div>
-
-    <div>
-        <center>
-        	<form id="2" name="getcode" action="sendsms.php" method="post">
+        	<form id="1" name="getcode" action="sendsms.php" method="post">
+        		手机号: <input type="text" name="phone"><br>
 				<input type="submit" name="getcode" value="获取验证码">
 			</form>
-
-   			<form id="1" name="submitverify" action="authtool.php" method="post">
-				<input type="submit" name="submitverify" value="提交" >
+   			<form id="2" name="verify" action="authtool.php" method="post">
+   				验证码: <input type="text" name="code"><br>
+				机器码: <input type="text" name="info"><br>
+				<input type="submit" name="verify" value="提交" >
 			</form>
 		</center>		
 	</div>

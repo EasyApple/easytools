@@ -1,3 +1,3 @@
 <?php
-	$randcode;
+	static $randcode;
 ?>

@@ -22,10 +22,14 @@
 	<div>
 		<br></br>
 	</div>
+
     <div id="tools">
         <center>
-		<a href="vlc.html">VLC插件</a>
-        <a href="auth.html">授权工具</a>
+		<table width="728">
+		<tr> 
+			<td width="90"><a href="vlc.html">VLC插件</a></td> 
+			<td width="90"><a href="auth.html">授权工具</a></td> 
+		</tr> 
         </center>
     </div>
 </form>

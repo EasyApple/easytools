@@ -72,17 +72,6 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 
 }
 
-function bin_to_ascii($bin)
-{
-	$ascii = "";
-    $len = strlen($bin);
-	for($i=0; $i<$len; $i+=2)
-	{
-		$ascii .= pack("C",hexdec(substr($bin,$i,2)));
-	}
-	return $ascii;
-}
-
 ?>
 
 
@@ -94,15 +83,15 @@ function bin_to_ascii($bin)
 		$rsaTool->init();
 		$userName = $_POST["name"];
 		$deviceInfo = $_POST["info"];
-		$licenseBase64 = $rsaTool->private_encrypt($deviceInfo);
-		$licenseBin = base64_decode($licenseBase64);
-		$licenseAscii = bin_to_ascii($licenseBin);
+		$licenseInfo = $rsaTool->private_encrypt($deviceInfo);
 	?>
 
-	Welcome <?php echo $userName; ?><br>
-	DeviceInfo: <?php echo $deviceInfo; ?><br>
-	LicenseBase64: <?php echo $licenseBase64; ?><br>
-	LicenseAscii: <?php echo $licenseAscii; ?><br>
+	<div>
+		Welcome <?php echo $userName; ?><br>
+		DeviceInfo: <?php echo $deviceInfo; ?><br>
+		LicenseInfo: <?php echo $licenseInfo; ?><br>
+		<a href="auth.html">返回</a>
+	</div>
 
 </body>
 </html>

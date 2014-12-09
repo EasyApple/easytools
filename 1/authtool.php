@@ -76,6 +76,7 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 
 
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <body>
 
 	<?php

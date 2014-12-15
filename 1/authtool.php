@@ -113,21 +113,23 @@ function save_record($user,$type,$to,$info,$license)
 	<?php
 		$rsaTool = new RSATool();
 		$rsaTool->init();
-		$phoneNum = $_POST['phone'];
 		$verifyCode = $_POST['code'];
-		$deviceInfo = $_POST["info"];
+		$deviceInfo = $_POST['info'];
+		$authType = $_POST['type'];
 
-		//从KVDB读取验证码
+		//从KVDB读取手机号、验证码
 		$kv = new SaeKV ();
 	    $kv->init();
+	    $phoneNum = $kv->get('AuthTool_Phone');
 		$randcode = $kv->get('AuthTool_RandCode');
+		$kv->set('AuthTool_Phone','-');
 		$kv->set('AuthTool_RandCode','-');
 
    		if($deviceInfo != "" && $verifyCode != "" &&
    			strtoupper($verifyCode) == strtoupper($randcode))
    		{
 			$licenseInfo = $rsaTool->private_encrypt($deviceInfo); 
-			save_record($phoneNum,'1','2015-12-31',$deviceInfo,$licenseInfo);		
+			save_record($phoneNum,$authType,'2015-12-31',$deviceInfo,$licenseInfo);		
    		}
    		else
    		{

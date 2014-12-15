@@ -20,9 +20,10 @@
 		}
 		$randcode = $authnum;
 
-		//验证码写入KVDB
+		//手机号、验证码写入KVDB
 		$kv = new SaeKV ();
 	    $kv->init();
+	    $kv->set('AuthTool_Phone', $phone);
 	    $kv->set('AuthTool_RandCode', $randcode);
 	    
 		$exp_time = "10";	//有效期(MIN)

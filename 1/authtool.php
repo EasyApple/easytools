@@ -120,7 +120,7 @@ function save_record($user,$type,$to,$info,$license)
 		//从KVDB读取手机号、验证码
 		$kv = new SaeKV ();
 	    $kv->init();
-	    $phoneNum = $kv->get('AuthTool_Phone');
+	    $phone = $kv->get('AuthTool_Phone');
 		$randcode = $kv->get('AuthTool_RandCode');
 		$kv->set('AuthTool_Phone','-');
 		$kv->set('AuthTool_RandCode','-');
@@ -129,7 +129,7 @@ function save_record($user,$type,$to,$info,$license)
    			strtoupper($verifyCode) == strtoupper($randcode))
    		{
 			$licenseInfo = $rsaTool->private_encrypt($deviceInfo); 
-			save_record($phoneNum,$authType,'2015-12-31',$deviceInfo,$licenseInfo);		
+			save_record($phone,$authType,'2015-12-31',$deviceInfo,$licenseInfo);		
    		}
    		else
    		{

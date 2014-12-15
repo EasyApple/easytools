@@ -72,20 +72,16 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 
 }
 
-function save_record($user,$type,$from,$to,$info,$license)
+function save_record($user,$type,$to,$info,$license)
 {
 	$mysql = new SaeMysql();
-	$data = $mysql->getData( $sql );
-	$name = strip_tags( $_REQUEST['name'] );
-	$age = intval( $_REQUEST['age'] );
-	$sql = "INSERT  INTO `authtool_record` ( `auth_user`, `auth_time`, `auth_type`, `auth_from`, `auth_to`, `device_info`, `license`) VALUES ('"  . $user . "' , NOW(), '" . intval( $type ) . "' , NOW() , NOW(), '"  . $info . "' , '"  . $license . "' ) ";
+	$sql = "INSERT  INTO `authtool_record` ( `auth_user`, `auth_time`, `auth_type`, `auth_from`, `auth_to`, `device_info`, `license`) VALUES ('".$user."' , NOW(), '".intval($type) ."', NOW(), '".$to."', '".$info."', '".$license."' ) ";
 	
 	$mysql->runSql($sql);
 	if ($mysql->errno() != 0)
 	{
 	    die("Error:" . $mysql->errmsg());
 	}
-
 	$mysql->closeDb();
 }
 
@@ -117,6 +113,7 @@ function save_record($user,$type,$from,$to,$info,$license)
 	<?php
 		$rsaTool = new RSATool();
 		$rsaTool->init();
+		$phoneNum = $_POST['phone'];
 		$verifyCode = $_POST['code'];
 		$deviceInfo = $_POST["info"];
 
@@ -130,7 +127,7 @@ function save_record($user,$type,$from,$to,$info,$license)
    			strtoupper($verifyCode) == strtoupper($randcode))
    		{
 			$licenseInfo = $rsaTool->private_encrypt($deviceInfo); 
-			save_record('USER','1','2014-12-16','2015-12-15',$deviceInfo,$licenseInfo);		
+			save_record($phoneNum,'1','2015-12-31',$deviceInfo,$licenseInfo);		
    		}
    		else
    		{

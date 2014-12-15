@@ -72,7 +72,7 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 
 }
 
-public function save_record($user,$type,$from,$to,$info,$license)
+function save_record($user,$type,$from,$to,$info,$license)
 {
 	$mysql = new SaeMysql();
 	$data = $mysql->getData( $sql );

@@ -72,6 +72,23 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
 
 }
 
+public function save_record($user,$type,$from,$to,$info,$license)
+{
+	$mysql = new SaeMysql();
+	$data = $mysql->getData( $sql );
+	$name = strip_tags( $_REQUEST['name'] );
+	$age = intval( $_REQUEST['age'] );
+	$sql = "INSERT  INTO `authtool_record` ( `auth_user`, `auth_time`, `auth_type`, `auth_from`, `auth_to`, `device_info`, `license`) VALUES ('"  . $user . "' , NOW(), '" . intval( $type ) . "' , NOW() , NOW(), '"  . $info . "' , '"  . $license . "' ) ";
+	
+	$mysql->runSql($sql);
+	if ($mysql->errno() != 0)
+	{
+	    die("Error:" . $mysql->errmsg());
+	}
+
+	$mysql->closeDb();
+}
+
 ?>
 
 
@@ -112,7 +129,8 @@ Bd6h4wrbbHA2XE1sq21ykja/Gqx7/IRia3zQfxGv/qEkyGOx+XALVoOlZqDwh76o
    		if($deviceInfo != "" && $verifyCode != "" &&
    			strtoupper($verifyCode) == strtoupper($randcode))
    		{
-			$licenseInfo = $rsaTool->private_encrypt($deviceInfo);   			
+			$licenseInfo = $rsaTool->private_encrypt($deviceInfo); 
+			save_record('USER','1','2014-12-16','2015-12-15',$deviceInfo,$licenseInfo);		
    		}
    		else
    		{

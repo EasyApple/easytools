@@ -2,6 +2,7 @@
 <form action="index.php" method="search">
 
 	<div>
+        <br><br>
 		<center>
 		<script type="text/javascript"><!--
 		google_ad_client = "ca-pub-3914685173905728";

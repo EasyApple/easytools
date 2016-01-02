@@ -1,9 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <form action="index.php" method="search">
-    <div id="title">
-        <title>EasyTools</title>
-        <br><center><lable><font type="黑体" size="16" color="blue">EasyTools</font></lable></center></br>
-    </div>
+
 	<div>
 		<center>
 		<script type="text/javascript"><!--
@@ -19,12 +16,17 @@
 		</script>
 		</center>
 	</div>
-	<div>
-		<br></br>
-	</div>
+    
+    <div id="title">
+        <br>
+        <title>EasyTools</title>
+        <br>
+        <center><lable><font type="黑体" size="16" color="blue">EasyTools</font></lable></center>
+    </div>
 
-    <div id="tools">
+    <div id="tools">   
     <center>
+        <br>
 		<a href="vlc.html">VLC插件</a>
 		<a href="auth.html">授权工具</a>
     </center>

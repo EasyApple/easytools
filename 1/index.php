@@ -16,6 +16,7 @@
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 		</center>
+        <br><br>
 	</div>
     
     <div id="title">
